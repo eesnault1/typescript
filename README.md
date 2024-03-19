@@ -10,3 +10,4 @@ Ce projet est une application web simple développée avec TypeScript et React. 
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
