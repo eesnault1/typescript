@@ -1,4 +1,8 @@
-export default function Fruit({ fruitInfo, onClick }) {
+import { FruitType } from "../typescript/FruitType";
+
+type FruitProps = { fruitInfo: FruitType; onClick: () => void };
+
+export default function Fruit({ fruitInfo, onClick }: FruitProps) {
   return (
     <li className="flex justify-between items-center shadow-sm rounded-md p-2 border border-gray-150 hover:bg-gray-50">
       <span className="text-gray-700 text-lg">{fruitInfo.nom}</span>

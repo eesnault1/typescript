@@ -1,25 +1,24 @@
 import { useState } from "react";
 import Fruit from "./components/Fruit";
 import FruitForm from "./components/FruitForm";
+import { FruitType } from "./typescript/FruitType";
 
 function App() {
-  const [fruits, setFruits] = useState([
+  const [fruits, setFruits] = useState<FruitType[]>([
     { id: 1, nom: "Abricot" },
     { id: 2, nom: "Banane" },
     { id: 3, nom: "Cerise" },
   ]);
 
-  const handleDelete = (id) => {
+  const handleDelete = (id: number) => {
     const fruitsCopy = [...fruits];
     const fruitsCopyUpdated = fruitsCopy.filter((fruit) => fruit.id !== id);
     setFruits(fruitsCopyUpdated);
   };
 
-  const handleAdd = (fruitAAjouter) => {
+  const handleAdd = (fruitAAjouter: FruitType) => {
     const fruitsCopy = [...fruits];
-
     fruitsCopy.push(fruitAAjouter);
-
     setFruits(fruitsCopy);
   };
 

@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { FruitType } from "../typescript/FruitType";
 
-export default function FruitForm({ handleAdd }) {
+type FruitFormProps = { handleAdd: (fruitAAjouter: FruitType) => void };
+
+export default function FruitForm({ handleAdd }: FruitFormProps) {
   const [nouveauFruit, setNouveauFruit] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const id = new Date().getTime();
     const nom = nouveauFruit;
@@ -15,7 +18,7 @@ export default function FruitForm({ handleAdd }) {
     setNouveauFruit("");
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNouveauFruit(event.target.value);
   };
 
